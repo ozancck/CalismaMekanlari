@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="OnboardingCollectionViewCell" customModule="CalismaMekanlari" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="498" height="502"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="498" height="502"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sW2-UY-NY6">
+                        <rect key="frame" x="25" y="280.66666666666669" width="428" height="40"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8b-fY-zyx">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q6h-fc-q3Z"/>
+                                    <constraint firstAttribute="width" constant="40" id="n2q-ws-vGB"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Guv-k4-vei">
+                                <rect key="frame" x="50" y="0.33333333333331439" width="378" height="39.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haritalarda listelenme" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX5-wC-eSa">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haritalardan bakardak daha fazl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uva-1A-wBL">
+                                        <rect key="frame" x="0.0" y="20.333333333333314" width="229.33333333333334" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZgD-hS-0DC">
+                        <rect key="frame" x="25" y="345.66666666666669" width="428" height="40"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="loy-OI-T70">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GMR-rT-ITV"/>
+                                    <constraint firstAttribute="width" constant="40" id="Mck-hu-rdO"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aCp-pu-IuR">
+                                <rect key="frame" x="50" y="0.33333333333331439" width="378" height="39.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haritalarda listelenme" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWD-7i-z7F">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haritalardan bakardak daha fazl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCi-Io-5gg">
+                                        <rect key="frame" x="0.0" y="20.333333333333314" width="229.33333333333334" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ivt-R4-niw">
+                        <rect key="frame" x="25" y="410.66666666666669" width="428" height="40"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOB-Jj-pLp">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="N9V-EF-lza"/>
+                                    <constraint firstAttribute="width" constant="40" id="vea-an-wHa"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="czc-LU-Fe2">
+                                <rect key="frame" x="50" y="0.33333333333331439" width="378" height="39.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haritalarda listelenme" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-QC-LoX">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haritalardan bakardak daha fazl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltk-Fl-8rN">
+                                        <rect key="frame" x="0.0" y="20.333333333333314" width="229.33333333333334" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To The Calisma Mekanları App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzT-jF-aai">
+                        <rect key="frame" x="25" y="159" width="448" height="71.666666666666686"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Ivt-R4-niw" firstAttribute="top" secondItem="ZgD-hS-0DC" secondAttribute="bottom" constant="25" id="8rP-HD-NIc"/>
+                <constraint firstItem="lzT-jF-aai" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="100" id="9fj-La-ZbD"/>
+                <constraint firstItem="ZgD-hS-0DC" firstAttribute="centerX" secondItem="sW2-UY-NY6" secondAttribute="centerX" id="BSh-Vo-gaC"/>
+                <constraint firstItem="lzT-jF-aai" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="G1B-1i-M4J"/>
+                <constraint firstItem="sW2-UY-NY6" firstAttribute="top" secondItem="lzT-jF-aai" secondAttribute="bottom" constant="50" id="I2Q-gG-cj9"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="lzT-jF-aai" secondAttribute="trailing" constant="25" id="JSb-AX-MD9"/>
+                <constraint firstItem="Ivt-R4-niw" firstAttribute="centerX" secondItem="ZgD-hS-0DC" secondAttribute="centerX" id="Qye-QV-QmL"/>
+                <constraint firstItem="ZgD-hS-0DC" firstAttribute="leading" secondItem="sW2-UY-NY6" secondAttribute="leading" id="V1X-tn-e5g"/>
+                <constraint firstItem="ZgD-hS-0DC" firstAttribute="top" secondItem="sW2-UY-NY6" secondAttribute="bottom" constant="25" id="VOo-z2-fLN"/>
+                <constraint firstItem="lzT-jF-aai" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="25" id="X7t-AC-1Bz"/>
+                <constraint firstAttribute="trailingMargin" secondItem="sW2-UY-NY6" secondAttribute="trailing" constant="25" id="p7S-ZJ-j9c"/>
+                <constraint firstItem="Ivt-R4-niw" firstAttribute="trailing" secondItem="ZgD-hS-0DC" secondAttribute="trailing" id="poW-j8-IEm"/>
+                <constraint firstItem="ZgD-hS-0DC" firstAttribute="trailing" secondItem="sW2-UY-NY6" secondAttribute="trailing" id="q31-3C-hhj"/>
+                <constraint firstItem="Ivt-R4-niw" firstAttribute="leading" secondItem="ZgD-hS-0DC" secondAttribute="leading" id="r1H-fR-4E2"/>
+                <constraint firstItem="sW2-UY-NY6" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="25" id="sBz-XN-J4f"/>
+            </constraints>
+            <size key="customSize" width="498" height="502"/>
+            <connections>
+                <outlet property="bodyLbl1" destination="uva-1A-wBL" id="6GE-gg-uxG"/>
+                <outlet property="bodyLbl2" destination="VCi-Io-5gg" id="yNH-3J-IaU"/>
+                <outlet property="bodyLbl3" destination="Ltk-Fl-8rN" id="Fi5-qT-TBk"/>
+                <outlet property="headerLbl" destination="lzT-jF-aai" id="WZl-Jk-oNv"/>
+                <outlet property="image1" destination="v8b-fY-zyx" id="3uK-R6-AVI"/>
+                <outlet property="image2" destination="loy-OI-T70" id="SfF-qZ-MhE"/>
+                <outlet property="image3" destination="LOB-Jj-pLp" id="GJD-sd-h4T"/>
+                <outlet property="mainLbl1" destination="WX5-wC-eSa" id="ffU-dK-J1L"/>
+                <outlet property="mainLbl2" destination="qWD-7i-z7F" id="7Mh-hb-SoZ"/>
+                <outlet property="mainLbl3" destination="4zX-QC-LoX" id="Kr3-ka-cbQ"/>
+            </connections>
+            <point key="canvasLocation" x="349.61832061068702" y="57.04225352112676"/>
+        </collectionViewCell>
+    </objects>
+</document>

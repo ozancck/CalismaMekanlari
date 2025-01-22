@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "map-location-dot-regular.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
