@@ -11,6 +11,16 @@ import UIKit
 
 extension UIView {
     
+    
+    //gesture func with clouser
+    
+    func addGesture(action: @escaping () -> Void) {
+           isUserInteractionEnabled = true
+           let tapGesture = ClosureTapGesture(action: action)
+           self.addGestureRecognizer(tapGesture)
+       }
+    
+    
     @IBInspectable var cornerRadius: CGFloat {
             get { return layer.cornerRadius }
             set {
@@ -33,3 +43,19 @@ extension UIView {
         return gradient
     }
 }
+
+
+class ClosureTapGesture: UITapGestureRecognizer {
+    private var action: () -> Void
+    
+    init(action: @escaping () -> Void) {
+        self.action = action
+        super.init(target: nil, action: nil)
+        self.addTarget(self, action: #selector(execute))
+    }
+    
+    @objc private func execute() {
+        action()
+    }
+}
+

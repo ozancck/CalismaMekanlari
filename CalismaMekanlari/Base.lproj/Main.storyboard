@@ -245,10 +245,29 @@
                     <navigationItem key="navigationItem" id="TQt-ZT-LlZ">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filterButtonView" destination="qXy-h5-Tmm" id="pHu-Yl-Tpl"/>
+                        <outlet property="mapkit" destination="6Bn-aA-wck" id="sJX-Ro-kDJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9T-V9-NEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4949" y="625"/>
+        </scene>
+        <!--Filter Map View Controller-->
+        <scene sceneID="3QB-SN-oFG">
+            <objects>
+                <viewController restorationIdentifier="FilterMapViewController" storyboardIdentifier="FilterMapViewController" id="FYi-Kd-cfo" customClass="FilterMapViewController" customModule="CalismaMekanlari" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9jr-vp-I4l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lyr-gp-hDo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWr-9Y-arQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5785" y="625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EP9-zk-XC9">
@@ -316,7 +335,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
