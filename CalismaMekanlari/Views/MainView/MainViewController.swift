@@ -14,6 +14,10 @@ class MainViewController: UIViewController {
     private let locationManager = CLLocationManager()
     @IBOutlet var filterButtonView: UIView!
 
+    @IBOutlet weak var locationImage: UIImageView!
+    @IBOutlet weak var filterImage: UIImageView!
+    @IBOutlet weak var navigationInfoView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,17 +26,54 @@ class MainViewController: UIViewController {
         setupMapView()
         setupLocationManager()
         addSampleCoffeeShops()
-
-        filterButtonView.addGesture {
-            print("Filter Button Tapped")
+        
+        filterImage.addGesture {
             self.goNewViewController()
         }
+        
+        locationImage.image = UIImage(systemName: "location.fill")
+        
+        locationImage.addGesture {
+            self.locationImage.image = UIImage(systemName: "location.fill")
+            self.locationManager.startUpdatingLocation()
+        }
+        
+        
+
+      
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    
+    
+    func setupUI() {
+        
+        
+        filterButtonView.layer.shadowOpacity = 0.8
+        filterButtonView.layer.shadowOffset = .zero
+        filterButtonView.layer.shadowRadius = 5
+        
+        
+        navigationInfoView.layer.shadowOpacity = 0.8
+        navigationInfoView.layer.shadowOffset = .zero
+        navigationInfoView.layer.shadowRadius = 5
+        
+        navigationInfoView.addLongPressGesture {
+            print("navigationInfoView")
+        }
+        
+        
+        
+    
+        
+        
+        
+        
     }
 
     func goNewViewController() {
@@ -42,8 +83,10 @@ class MainViewController: UIViewController {
 
     private func setupMapView() {
        
-
-        // Kullanıcı konumunu göster (mavi nokta)
+        mapkit.showsCompass = false
+        //mapkit.showsScale = true
+       // mapkit.showsUserTrackingButton = true
+        
         mapkit.showsUserLocation = true
     }
 
@@ -79,7 +122,12 @@ extension MainViewController: CLLocationManagerDelegate {
         zoomToUserLocation(location: location)
         // Sürekli zoom yapmasını istemiyorsak konum güncellemeyi durdurabiliriz
         locationManager.stopUpdatingLocation()
+        
     }
+    
+  
+    
+ 
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -92,6 +140,15 @@ extension MainViewController: CLLocationManagerDelegate {
 }
 
 extension MainViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+       if mapView.isUserLocationVisible {
+           locationImage.image = UIImage(systemName: "location.fill")
+       } else {
+           locationImage.image = UIImage(systemName: "location")
+       }
+    }
+
     
     private func addSampleCoffeeShops() {
         let sampleCoffeeShops = [
@@ -160,6 +217,8 @@ extension MainViewController: MKMapViewDelegate {
         mapkit.addAnnotations(sampleCoffeeShops)
     }
     
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
@@ -195,14 +254,32 @@ extension MainViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
         if let coffeeAnnotation = annotation as? CoffeePlaceAnnotation {
             handleCoffeeTap(coffeePlace: coffeeAnnotation)
+            mapView.deselectAnnotation(annotation, animated: false)
         }
     }
     
     private func handleCoffeeTap(coffeePlace: CoffeePlaceAnnotation) {
-        print("Seçilen Kafe: \(coffeePlace.name)")
-        print("Kafe ID: \(coffeePlace.id)")
-        print("Rating: \(coffeePlace.rating)")
-        // Buraya istediğiniz aksiyonu ekleyebilirsiniz
+        let point = MKMapPoint(coffeePlace.coordinate)
+        let rect = MKMapRect(x: point.x, y: point.y, width: 1, height: 1)
+        mapkit.setVisibleMapRect(rect, edgePadding: UIEdgeInsets(top: 150, left: 50, bottom: 600, right: 50), animated: true)
+        
+        presentSheet()
+    }
+    
+    
+    
+    //MARK: - sheet
+    @objc func presentSheet() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // veya storyboard'ınızın adı
+        let sheetViewController = storyboard.instantiateViewController(withIdentifier: "CalismaMekanlariDetailViewController") // storyboard ID'si
+        sheetViewController.modalPresentationStyle = .pageSheet
+        
+        if let sheet = sheetViewController.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = true
+        }
+        
+        present(sheetViewController, animated: true)
     }
 }
 

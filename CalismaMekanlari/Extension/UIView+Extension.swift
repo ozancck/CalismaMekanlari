@@ -14,6 +14,12 @@ extension UIView {
     
     //gesture func with clouser
     
+    func addLongPressGesture(action: @escaping () -> Void) {
+        isUserInteractionEnabled = true
+        let longPressGesture = ClosureLongPressGesture(action: action)
+        self.addGestureRecognizer(longPressGesture)
+    }
+    
     func addGesture(action: @escaping () -> Void) {
            isUserInteractionEnabled = true
            let tapGesture = ClosureTapGesture(action: action)
@@ -46,6 +52,20 @@ extension UIView {
 
 
 class ClosureTapGesture: UITapGestureRecognizer {
+    private var action: () -> Void
+    
+    init(action: @escaping () -> Void) {
+        self.action = action
+        super.init(target: nil, action: nil)
+        self.addTarget(self, action: #selector(execute))
+    }
+    
+    @objc private func execute() {
+        action()
+    }
+}
+
+class ClosureLongPressGesture: UILongPressGestureRecognizer {
     private var action: () -> Void
     
     init(action: @escaping () -> Void) {
