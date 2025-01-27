@@ -261,7 +261,7 @@ extension MainViewController: MKMapViewDelegate {
 
     @objc func presentSheet() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // veya storyboard'ınızın adı
-        let sheetViewController = storyboard.instantiateViewController(withIdentifier: "CalismaMekanlariDetailViewController") // storyboard ID'si
+        let sheetViewController = storyboard.instantiateViewController(withIdentifier: "CalismaMekanlariCollection") // storyboard ID'si
         sheetViewController.modalPresentationStyle = .pageSheet
 
         if let sheet = sheetViewController.sheetPresentationController {
@@ -271,6 +271,9 @@ extension MainViewController: MKMapViewDelegate {
 
         present(sheetViewController, animated: true)
     }
+    
+    
+    
 }
 
 class CoffeePlaceAnnotation: MKPointAnnotation {
