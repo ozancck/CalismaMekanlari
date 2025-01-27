@@ -12,11 +12,11 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet var mapkit: MKMapView!
     private let locationManager = CLLocationManager()
-    @IBOutlet var filterButtonView: UIView!
-
-    @IBOutlet weak var locationImage: UIImageView!
-    @IBOutlet weak var filterImage: UIImageView!
-    @IBOutlet weak var navigationInfoView: UIView!
+ 
+    @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var searchImage: UIImageView!
+    @IBOutlet weak var switchImage: UIImageView!
+    @IBOutlet weak var switchBackground: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +27,7 @@ class MainViewController: UIViewController {
         setupLocationManager()
         addSampleCoffeeShops()
         
-        filterImage.addGesture {
-            self.goNewViewController()
-        }
-        
-        locationImage.image = UIImage(systemName: "location.fill")
-        
-        locationImage.addGesture {
-            self.locationImage.image = UIImage(systemName: "location.fill")
-            self.locationManager.startUpdatingLocation()
-        }
+        setupFilterView()
         
         
 
@@ -49,32 +40,31 @@ class MainViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    
-    
-    func setupUI() {
+    func setupFilterView(){
+        
+        switchBackground.backgroundColor = .clear
+        switchBackground.layer.cornerRadius = switchBackground.frame.height / 2
+        switchBackground.layer.borderWidth = 1
+        switchBackground.layer.borderColor = UIColor.darkCellBackground.cgColor
+        
+        //add shadow
+        filterView.layer.shadowColor = UIColor.black.cgColor
+        filterView.layer.shadowOpacity = 0.08
+        filterView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        filterView.layer.shadowRadius = 2
+        filterView.layer.masksToBounds = false
         
         
-        filterButtonView.layer.shadowOpacity = 0.8
-        filterButtonView.layer.shadowOffset = .zero
-        filterButtonView.layer.shadowRadius = 5
-        
-        
-        navigationInfoView.layer.shadowOpacity = 0.8
-        navigationInfoView.layer.shadowOffset = .zero
-        navigationInfoView.layer.shadowRadius = 5
-        
-        navigationInfoView.addLongPressGesture {
-            print("navigationInfoView")
+        filterView.addGesture {
+            self.goNewViewController()
         }
         
         
-        
-    
-        
-        
-        
-        
     }
+    
+    
+    
+   
 
     func goNewViewController() {
         let vc = storyboard?.instantiateViewController(identifier: "FilterMapViewController") as! FilterMapViewController
@@ -85,7 +75,7 @@ class MainViewController: UIViewController {
        
         mapkit.showsCompass = false
         //mapkit.showsScale = true
-       // mapkit.showsUserTrackingButton = true
+        mapkit.showsUserTrackingButton = true
         
         mapkit.showsUserLocation = true
     }
@@ -141,13 +131,7 @@ extension MainViewController: CLLocationManagerDelegate {
 
 extension MainViewController: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-       if mapView.isUserLocationVisible {
-           locationImage.image = UIImage(systemName: "location.fill")
-       } else {
-           locationImage.image = UIImage(systemName: "location")
-       }
-    }
+  
 
     
     private func addSampleCoffeeShops() {
@@ -260,8 +244,8 @@ extension MainViewController: MKMapViewDelegate {
     
     private func handleCoffeeTap(coffeePlace: CoffeePlaceAnnotation) {
         let point = MKMapPoint(coffeePlace.coordinate)
-        let rect = MKMapRect(x: point.x, y: point.y, width: 1, height: 1)
-        mapkit.setVisibleMapRect(rect, edgePadding: UIEdgeInsets(top: 150, left: 50, bottom: 600, right: 50), animated: true)
+        let rect = MKMapRect(x: point.x, y: point.y, width: 800, height: 800)
+        mapkit.setVisibleMapRect(rect, edgePadding: UIEdgeInsets(top: 150, left: 200, bottom: 300, right: 50), animated: true)
         
         presentSheet()
     }
