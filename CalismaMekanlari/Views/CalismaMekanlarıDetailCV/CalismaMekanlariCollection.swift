@@ -15,27 +15,27 @@ class CalismaMekanlariCollection: UICollectionViewController {
     let headerId = "headerId"
 
     
-//    
-//     init() {
-//         super.init(collectionViewLayout: CalismaMekanlariCollection.crateLayout())
-//     }
-//     
-//     
-//         required init?(coder: NSCoder) {
-//             fatalError("init(coder:) has not been implemented")
-//         }
-//     
+    
+     init() {
+         super.init(collectionViewLayout: CalismaMekanlariCollection.crateLayout())
+     }
+     
+     
+         required init?(coder: NSCoder) {
+             fatalError("init(coder:) has not been implemented")
+         }
+     
  
     
-    required init?(coder: NSCoder) {
-        super.init(collectionViewLayout: CalismaMekanlariCollection.crateLayout())
-    }
+//    required init?(coder: NSCoder) {
+//        super.init(collectionViewLayout: CalismaMekanlariCollection.crateLayout())
+//    }
 
     static func crateLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { sectionNumber, _ -> NSCollectionLayoutSection in
 
             if sectionNumber == 0 {
-                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250)))
 
              
                 item.contentInsets.bottom = 75
@@ -301,28 +301,28 @@ class CalismaMekanlariCollection: UICollectionViewController {
     
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Container().edgesIgnoringSafeArea(.all)
-//    }
-//
-//    struct Container: UIViewControllerRepresentable {
-//        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-//        }
-//
-//        func makeUIViewController(context: Context) -> UIViewController {
-//            UINavigationController(rootViewController: CalismaMekanlariCollection())
-//        }
-//
-//        typealias UIViewControllerType = UIViewController
-//    }
-//}
-//
-//struct ContentView: View {
-//    var body: some View {
-//        Text("Hello, World!")
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Container().edgesIgnoringSafeArea(.all)
+    }
+
+    struct Container: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        }
+
+        func makeUIViewController(context: Context) -> UIViewController {
+            UINavigationController(rootViewController: CalismaMekanlariCollection())
+        }
+
+        typealias UIViewControllerType = UIViewController
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
 
 class Header: UICollectionReusableView {
     let label = UILabel()
